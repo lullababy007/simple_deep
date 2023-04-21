@@ -7,13 +7,13 @@ import os
 # 훈련 데이터 이미지 경로
 parent_directory = "C:\\Users\\a\\Desktop\\Eng"
 
-# 레이블 지정 (예시입니다. 실제 레이블에 맞게 수정해주세요.)
+# 레이블 지정
 train_labels = ['label1', 'label2', 'label3']
 
 # 데이터 준비 (ImageDataGenerator 사용)
 train_data_gen = ImageDataGenerator(rescale=1./255)
 train_data = train_data_gen.flow_from_directory(
-    parent_directory,
+    directory= parent_directory,
     classes=train_labels,
     target_size=(128, 128),
     batch_size=3,
